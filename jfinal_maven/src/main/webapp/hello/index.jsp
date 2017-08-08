@@ -3,7 +3,7 @@
 <!DOCTYPE>
 <html>
 <head>
-<title>JavaWebTest</title>
+<title>JFinalTest</title>
 <style type="text/css">
 td {
 	text-align: center;
@@ -20,7 +20,7 @@ td {
 		<button onclick="selectById()">确定</button>
 	</h2>
 	<hr />
-	<table border="1px">
+	<table style="border:1px solid #000;">
 		<tr>
 			<td>ID</td>
 			<td>名称</td>
@@ -57,6 +57,10 @@ function deleteCommodity(id) {
 }
 
 function selectById() {
+	if($("#ID").val().trim() === ""){
+        alert("ID不能为空！");
+        return;
+    }
 	location.href = "hello?id=" + $("#ID").val();
 }
 </script>

@@ -11,7 +11,7 @@ public class CommodityController extends Controller {
 
     public void index() {
         List<Commodity> commodity;
-        if(getPara("id") != null) {
+        if(getPara("id") != null && !getPara("id").equals("")) {
             commodity = Commodity.dao.find("select * from commodity where id = ?", getPara("id"));
         } else {
             commodity = Commodity.dao.find("select * from commodity");
