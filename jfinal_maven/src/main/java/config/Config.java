@@ -1,5 +1,6 @@
 package config;
 
+import model.Account;
 import model.Commodity;
 
 import com.jfinal.config.Constants;
@@ -13,6 +14,8 @@ import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.template.Engine;
 
 import controller.CommodityController;
+import controller.IndexController;
+import controller.LoginController;
 
 public class Config extends JFinalConfig {
 
@@ -24,7 +27,9 @@ public class Config extends JFinalConfig {
 
     @Override
     public void configRoute(Routes me) {
+        me.add("/", IndexController.class);
         me.add("/hello", CommodityController.class);
+        me.add("/login", LoginController.class);
     }
 
     @Override
@@ -39,6 +44,7 @@ public class Config extends JFinalConfig {
         ActiveRecordPlugin arp = new ActiveRecordPlugin(dp);
         me.add(arp);
         arp.addMapping("commodity", Commodity.class);
+        arp.addMapping("account", Account.class);
     }
 
     @Override
