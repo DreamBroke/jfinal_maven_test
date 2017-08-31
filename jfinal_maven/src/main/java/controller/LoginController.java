@@ -4,8 +4,10 @@ import interceptor.LoginSuccessInterceptor;
 import util.AccountValidate;
 
 import com.jfinal.aop.Before;
+import com.jfinal.aop.Clear;
 import com.jfinal.core.Controller;
 
+@Clear
 public class LoginController extends Controller {
 
     @Before(LoginSuccessInterceptor.class)

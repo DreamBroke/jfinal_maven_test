@@ -1,16 +1,12 @@
 package controller;
 
-import interceptor.LoginInterceptor;
-
 import java.util.List;
 
 import model.Commodity;
 
-import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
 import com.jfinal.plugin.activerecord.Db;
 
-@Before(LoginInterceptor.class)
 public class CommodityController extends Controller {
 
     public void index() {

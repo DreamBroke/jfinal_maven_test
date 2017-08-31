@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <title>JFinal-Add</title>
@@ -35,8 +35,7 @@ label {
 				<label for="id">ID</label> <input id="id" name="commodity.id" disabled
 					value="${commodity.id}"><br> <label for="name">姓名</label>
 				<input id="name" name="commodity.name" value="${commodity.name}"><br>
-				<label for="price">价格</label> <input id="price" type="number"
-					name="commodity.price" value="${commodity.price}"><br>
+				<label for="price">价格</label> <input id="price" type="number" name="commodity.price" value="${commodity.price}"><br>
 				<label for="quantity">数量</label> <input id="quantity" type="number"
 					name="commodity.quantity" value="${commodity.quantity}"><br>
 				<input type="hidden" value="${commodity.id}" name="id">

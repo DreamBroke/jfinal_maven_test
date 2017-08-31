@@ -1,5 +1,6 @@
 package config;
 
+import interceptor.LoginInterceptor;
 import model.Account;
 import model.Commodity;
 
@@ -49,7 +50,7 @@ public class Config extends JFinalConfig {
 
     @Override
     public void configInterceptor(Interceptors me) {
-        
+        me.add(new LoginInterceptor());
     }
 
     @Override
