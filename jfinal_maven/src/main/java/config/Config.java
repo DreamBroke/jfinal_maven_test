@@ -15,6 +15,7 @@ import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.template.Engine;
 
 import controller.CommodityController;
+import controller.EngineTestController;
 import controller.IndexController;
 import controller.LoginController;
 
@@ -31,11 +32,12 @@ public class Config extends JFinalConfig {
         me.add("/", IndexController.class);
         me.add("/hello", CommodityController.class);
         me.add("/login", LoginController.class);
+        me.add("/test", EngineTestController.class);
     }
 
     @Override
     public void configEngine(Engine me) {
-        
+        //me.addSharedFunction("common/footer.html");
     }
 
     @Override
