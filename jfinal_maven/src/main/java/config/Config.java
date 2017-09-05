@@ -23,7 +23,6 @@ public class Config extends JFinalConfig {
 
     @Override
     public void configConstant(Constants me) {
-        loadPropertyFile("dbconfig.properties");
         me.setDevMode(true);
     }
 
@@ -42,6 +41,7 @@ public class Config extends JFinalConfig {
 
     @Override
     public void configPlugin(Plugins me) {
+        loadPropertyFile("dbconfig.properties");
         DruidPlugin dp = new DruidPlugin(getProperty("url"), getProperty("user"), getProperty("password"), getProperty("driver"));
         me.add(dp);
         ActiveRecordPlugin arp = new ActiveRecordPlugin(dp);
