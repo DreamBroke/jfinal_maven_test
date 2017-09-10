@@ -16,6 +16,7 @@ public class CommodityController extends Controller {
         } else {
             commodity = Commodity.dao.find("select * from commodity");
         }
+        System.out.println(Commodity.getAllCommodity());
         setAttr("list", commodity);
         renderJsp("index.jsp");
     }

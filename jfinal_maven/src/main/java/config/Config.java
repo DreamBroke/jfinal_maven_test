@@ -3,6 +3,7 @@ package config;
 import interceptor.LoginInterceptor;
 import model.Account;
 import model.Commodity;
+import model.Test;
 
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
@@ -48,6 +49,7 @@ public class Config extends JFinalConfig {
         me.add(arp);
         arp.addMapping("commodity", Commodity.class);
         arp.addMapping("account", Account.class);
+        arp.addMapping("test", Test.class);
     }
 
     @Override
