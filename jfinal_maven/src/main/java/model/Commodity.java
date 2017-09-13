@@ -10,7 +10,7 @@ public class Commodity extends Model<Commodity> {
 
     public static final Commodity dao = new Commodity().dao();
     
-    public static List<Commodity> getAllCommodity() {
+    public List<Commodity> getAllCommodity() {
         List<Commodity> commodityList = Commodity.dao.find("select * from commodity");
         return commodityList;
     }

@@ -16,25 +16,25 @@ public class CommodityController extends Controller {
         } else {
             commodity = Commodity.dao.find("select * from commodity");
         }
-        System.out.println(Commodity.getAllCommodity());
         setAttr("list", commodity);
         renderJsp("index.jsp");
     }
 
-    public void add() {
+    public int add() {
         if (getPara("id") != null) {
             Commodity commodity = Commodity.dao.findById(getPara("id"));
             setAttr("commodity", commodity);
             renderJsp("add.jsp");
-            return;
+            return 0;
         }
         Commodity commodity = getModel(Commodity.class);
         if (commodity.getStr("name") == null || commodity.getStr("name") == "") {
             renderJsp("add.jsp");
-            return;
+            return 0;
         }
         commodity.save();
         redirect("/hello");
+        return 0;
     }
 
     public void delete() {
