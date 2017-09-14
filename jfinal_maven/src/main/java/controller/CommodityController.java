@@ -20,21 +20,21 @@ public class CommodityController extends Controller {
         renderJsp("index.jsp");
     }
 
-    public int add() {
+    public void add() {
         if (getPara("id") != null) {
             Commodity commodity = Commodity.dao.findById(getPara("id"));
             setAttr("commodity", commodity);
             renderJsp("add.jsp");
-            return 0;
+            return;
         }
         Commodity commodity = getModel(Commodity.class);
         if (commodity.getStr("name") == null || commodity.getStr("name") == "") {
             renderJsp("add.jsp");
-            return 0;
+            return;
         }
         commodity.save();
         redirect("/hello");
-        return 0;
+        return;
     }
 
     public void delete() {
